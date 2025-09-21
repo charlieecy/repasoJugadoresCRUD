@@ -18,7 +18,7 @@ data class JugadorEntity(
     val id: Long,
     val nombre: String,
     val dorsal: Int,
-    val posicion: Posicion,
+    val posicion: String,
     val club: String,
     val createdAt: LocalDateTime = LocalDateTime.now(),
     val updatedAt: LocalDateTime = LocalDateTime.now(),

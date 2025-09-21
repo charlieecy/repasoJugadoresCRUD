@@ -25,7 +25,7 @@ class JugadorDaoTest {
         id = 1L,
         nombre = "Pikachu",
         dorsal = 12,
-        posicion = Posicion.DELANTERO,
+        posicion = Posicion.DELANTERO.toString(),
         club = "Atlético de Madrid",
         createdAt = LocalDateTime.now(),
         updatedAt = LocalDateTime.now(),

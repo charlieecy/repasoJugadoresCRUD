@@ -12,10 +12,13 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
 
+    //Mockito
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.3.1")
     testImplementation("org.mockito:mockito-junit-jupiter:5.12.0")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.23")
 
+    // Result
+    implementation("com.michael-bull.kotlin-result:kotlin-result:2.0.0")
 
     // Logger
     implementation("org.lighthousegames:logging:1.5.0")

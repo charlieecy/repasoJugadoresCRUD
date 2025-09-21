@@ -14,7 +14,7 @@ interface JugadorDao {
      * @return Una lista de todos los jugadores de la tabla.
      * @see [JugadorEntity]
      */
-    @SqlQuery("SELECT * FROM jugadores")
+    @SqlQuery("SELECT * FROM jugadores where isDeleted = false")
     fun getAll(): List<JugadorEntity>
 
     /**
@@ -22,7 +22,7 @@ interface JugadorDao {
      * @return El jugador con el id buscado, o null en caso de no existir.
      * @see [JugadorEntity]
      */
-    @SqlQuery("SELECT * FROM jugadores WHERE id = :id")
+    @SqlQuery("SELECT * FROM jugadores WHERE id = :id AND isDeleted = false")
     fun getById(@Bind("id")id: Long): JugadorEntity?
 
     /**
@@ -32,7 +32,7 @@ interface JugadorDao {
      */
     @SqlUpdate("INSERT INTO jugadores (nombre, dorsal, posicion, club, createdAt, updatedAt, isDeleted) VALUES (:nombre, :dorsal, :posicion, :club, :createdAt, :updatedAt, :isDeleted)")
     @GetGeneratedKeys("id") //Porque como el id es autonumérico y generado por la BBDD, lo necesitamos, es lo que devuelve la función
-    fun save (@BindBean persona: JugadorEntity): Int
+    fun save (@BindBean jugador: JugadorEntity): Int
 
     /**
      * Actualiza un jugador en la base de datos.
@@ -48,7 +48,7 @@ interface JugadorDao {
      * @see [JugadorEntity]
      */
     @SqlUpdate("UPDATE jugadores SET isDeleted = true WHERE id = :id")
-    fun deleteById(id: Long): Int
+    fun deleteById(@Bind("id")id: Long): Int
 
     /**
      * Elimina el contenido de la tabla jugadores

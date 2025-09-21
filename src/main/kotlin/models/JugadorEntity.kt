@@ -1,5 +1,6 @@
 package org.example.models
 
+import org.jdbi.v3.core.mapper.reflect.ColumnName
 import java.time.LocalDateTime
 
 /**
@@ -21,5 +22,6 @@ data class JugadorEntity(
     val club: String,
     val createdAt: LocalDateTime = LocalDateTime.now(),
     val updatedAt: LocalDateTime = LocalDateTime.now(),
+    @get:JvmName("getIsDeleted")
     val isDeleted: Boolean = false
 )

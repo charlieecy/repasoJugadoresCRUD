@@ -11,6 +11,11 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+
+    // Logger
+    implementation("org.lighthousegames:logging:1.5.0")
+    implementation("ch.qos.logback:logback-classic:1.5.13")
+
     // BBDD H2
     implementation("com.h2database:h2:2.2.224")
 

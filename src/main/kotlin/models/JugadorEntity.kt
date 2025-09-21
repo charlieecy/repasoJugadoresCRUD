@@ -1,10 +1,10 @@
 package org.example.models
 
-import java.time.LocalDate
 import java.time.LocalDateTime
+
 /**
- * Clase que representa un Jugador.
- * @param id [Long] id único del jugador
+ * Clase que representa un [Jugador] en forma de entidad, para la base de datos.
+ * @param id [Long] Id único del jugador
  * @param nombre [String] Nombre del jugador
  * @param dorsal [Int] Número del jugador
  * @param posicion [Posicion] Posición del jugador
@@ -13,7 +13,7 @@ import java.time.LocalDateTime
  * @param updatedAt [LocalDateTime] Fecha y hora en que el jugador fue actualizado
  * @param isDeleted [Boolean] Si el jugador ha sido borrado
  */
-class Jugador (
+data class JugadorEntity(
     val id: Long,
     val nombre: String,
     val dorsal: Int,
@@ -22,13 +22,4 @@ class Jugador (
     val createdAt: LocalDateTime = LocalDateTime.now(),
     val updatedAt: LocalDateTime = LocalDateTime.now(),
     val isDeleted: Boolean = false
-) {
-
-    /**
-     * Sobreescribe la funcion [toString] predeterminada dándole un formato más legible
-     */
-    override fun toString(): String {
-        return "Jugador (nombre = $nombre, dorsal = $dorsal, posición = $posicion, club = $club,  createdAt= $createdAt, updatedAt= $updatedAt, isDeleted = $isDeleted)"
-    }
-
-}
+)

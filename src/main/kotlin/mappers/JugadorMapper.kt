@@ -1,5 +1,6 @@
 package org.example.mappers
 
+import org.example.dto.JugadorDTO
 import org.example.models.Jugador
 import org.example.models.JugadorEntity
 import org.example.models.Posicion
@@ -40,6 +41,21 @@ import java.time.LocalDateTime
             isDeleted = isDeleted
         )
     }
+
+/**
+ * Parsea un [JugadorDTO] a [Jugador]
+ */
+fun JugadorDTO.toModel () : Jugador {
+        return Jugador(
+            id = id,
+            nombre = nombre,
+            dorsal = dorsal,
+            posicion = Posicion.valueOf(posicion),
+            club = club,
+        )
+    }
+
+
 
 /**
  * Crea una copia de un objeto de la clase [Jugador]

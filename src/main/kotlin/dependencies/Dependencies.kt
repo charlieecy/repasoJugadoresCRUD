@@ -116,7 +116,7 @@ object Dependencies {
      * @see provideJugadorCache
      * @see provideJugadorService
      */
-    fun getIntegrantesService(): JugadorService {
+    fun getJugadoresService(): JugadorService {
         return provideJugadorService(
             repository = provideJugadorRepository(provideJugadorDao(provideDatabaseManager())),
             validator = provideJugadorValidator(),

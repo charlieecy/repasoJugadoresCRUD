@@ -1,16 +1,29 @@
 package org.example
 
+import org.example.dependencies.Dependencies
+import java.io.File
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+    val service = Dependencies.getJugadoresService()
+    val file = File("data/data.csv")
+    service.importFromFile(file.toPath())
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
-    }
+
+    println("CONSULTAS:")
+    println("-------------------------------")
+    println("Filtrar jugadores por club (Real Madrid)")
+    println(service.getAll().filter { it.club == "Real Madrid" })
+    println("-------------------------------")
+    println("Agrupar por posición")
+    println(service.getAll().groupBy { it.posicion })
+    println("-------------------------------")
+    println("Por cada club, cuántos jugadores hay por posición")
+   println(service.getAll()
+        .groupBy { it.club }  // agrupa por club
+        .mapValues { (_, jugadoresPorClub) ->
+            jugadoresPorClub.groupingBy { it.posicion }.eachCount() // agrupa por posición y cuenta
+        })
+
 }

@@ -26,7 +26,7 @@ class JugadorRepositoryImpl(
     }
 
     override fun update(entity: Jugador, id: Long): Jugador? {
-        val result = dao.update(entity.toEntity(), entity.id)
+        val result = dao.update(entity.toEntity(), id)
 
         if (result == 1) {
             return entity

@@ -20,6 +20,9 @@ dependencies {
     // Result
     implementation("com.michael-bull.kotlin-result:kotlin-result:2.0.0")
 
+    // Caché Caffeine
+    implementation("com.github.ben-manes.caffeine:caffeine:3.2.0")
+
     // Logger
     implementation("org.lighthousegames:logging:1.5.0")
     implementation("ch.qos.logback:logback-classic:1.5.13")

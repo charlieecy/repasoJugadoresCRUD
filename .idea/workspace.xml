@@ -7,7 +7,11 @@
     <list default="true" id="78db5836-8942-47d0-a874-b8ba6a026b79" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dependencies/Dependencies.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dependencies/Dependencies.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/mappers/JugadorMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/mappers/JugadorMapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Posicion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/Posicion.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/repository/JugadorRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/repository/JugadorRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/storage/JugadorStorageImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/storage/JugadorStorageImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/validator/JugadorValidatorImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/validator/JugadorValidatorImpl.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,33 +81,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.JugadorRepositoryImplTest.executor": "Coverage",
-    "Gradle.JugadorServiceImplTest.executor": "Coverage",
-    "Gradle.JugadorStorageImplTest.executor": "Coverage",
-    "Gradle.JugadorValidatorImplTest.executor": "Coverage",
-    "Gradle.Tests in 'repasoJugadoresCRUD.test'.executor": "Coverage",
-    "Gradle.TestsCorrectos.executor": "Run",
-    "Gradle.TestsCorrectos.getByID.executor": "Run",
-    "Gradle.repasoJugadoresCRUD [:org.example.MainKt.main()].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "features",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/carlo/Desktop/DAW2/Servidor/practicaRepaso/repasoJugadoresCRUD/data",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/carlo/Desktop/DAW2/Servidor/practicaRepaso/repasoJugadoresCRUD/src/main/kotlin/Main.kt",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.JugadorRepositoryImplTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.JugadorServiceImplTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.JugadorStorageImplTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.JugadorValidatorImplTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.Tests in 'repasoJugadoresCRUD.test'.executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.TestsCorrectos.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestsCorrectos.getByID.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.repasoJugadoresCRUD [:org.example.MainKt.main()].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;features&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/carlo/Desktop/DAW2/Servidor/practicaRepaso/repasoJugadoresCRUD/data&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/carlo/Desktop/DAW2/Servidor/practicaRepaso/repasoJugadoresCRUD/src/main/kotlin/Main.kt&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\carlo\Desktop\DAW2\Servidor\practicaRepaso\repasoJugadoresCRUD\data" />
@@ -254,7 +258,7 @@
       <option name="presentableId" value="Default" />
       <updated>1758464437557</updated>
       <workItem from="1758464439807" duration="38000" />
-      <workItem from="1758519794708" duration="10165000" />
+      <workItem from="1758519794708" duration="11213000" />
     </task>
     <servers />
   </component>

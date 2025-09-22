@@ -7,10 +7,15 @@ import org.example.dto.JugadorDTO
 import org.example.errors.JugadorErrors
 import org.example.mappers.toModel
 import org.example.models.Jugador
+import org.lighthousegames.logging.logging
 import java.io.File
 
 class JugadorStorageImpl: JugadorStorage {
+    private val logger = logging()
+
     override fun fileRead(file: File): Result<List<Jugador>, JugadorErrors.StorageError> {
+        logger.debug { "STORAGE: Importando jugadores de fichero: $file" }
+
         if (!file.exists() || !file.isFile || !file.canRead()) {
             return Err(JugadorErrors.StorageError("El fichero no existe, la ruta especificada no es un fichero o no se tienen permisos de lectura"))
         }

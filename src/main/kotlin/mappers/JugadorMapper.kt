@@ -4,15 +4,19 @@ import org.example.dto.JugadorDTO
 import org.example.models.Jugador
 import org.example.models.JugadorEntity
 import org.example.models.Posicion
+import org.lighthousegames.logging.logging
 import java.time.LocalDate
 import java.time.LocalDateTime
 
+private val logger = logging()
 
 /**
      * Parsea un [JugadorEntity] a [Jugador]
      * @return El [Jugador]
      */
     fun JugadorEntity.toModel (): Jugador {
+        logger.debug { "MAPPER: Mapeando entidad a modelo" }
+
         return Jugador(
             id = id,
             nombre = nombre,
@@ -30,6 +34,8 @@ import java.time.LocalDateTime
      * @return El [JugadorEntity]
      */
     fun Jugador.toEntity (): JugadorEntity {
+        logger.debug { "MAPPER: Mapeando modelo a entidad" }
+
         return JugadorEntity(
             id = id,
             nombre = nombre,
@@ -46,7 +52,9 @@ import java.time.LocalDateTime
  * Parsea un [JugadorDTO] a [Jugador]
  */
 fun JugadorDTO.toModel () : Jugador {
-        return Jugador(
+    logger.debug { "MAPPER: Mapeando DTO a modelo" }
+
+    return Jugador(
             id = id,
             nombre = nombre,
             dorsal = dorsal,
@@ -79,6 +87,8 @@ fun Jugador.copy(
     newUpdatedAt: LocalDateTime = this.updatedAt,
     newIsDeleted: Boolean = this.isDeleted,
 ): Jugador {
+    logger.debug { "EXTENSIÓN: Copiando jugador" }
+
     return Jugador(
         id = newId,
         nombre = newNombre,

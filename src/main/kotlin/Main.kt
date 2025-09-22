@@ -10,7 +10,6 @@ fun main() {
     val file = File("data/data.csv")
     service.importFromFile(file.toPath())
 
-
     println("CONSULTAS:")
     println("-------------------------------")
     println("Filtrar jugadores por club (Real Madrid)")

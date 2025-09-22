@@ -6,17 +6,21 @@ import com.github.michaelbull.result.Result
 import org.example.errors.JugadorErrors
 import org.example.models.Jugador
 import org.example.models.Posicion
+import org.lighthousegames.logging.logging
+import kotlin.math.log
 
 /**
  * Clase que representa el validador de objetos del tipo [Jugador]
  */
 class JugadorValidatorImpl : JugadorValidator {
+    private val logger = logging()
 
     /**
      * Valida un [Jugador].
      * @return El propio jugador si los datos son correctos, un [JugadorErrors.InvalidoError] en caso contrario.
      */
     override fun validate(entity: Jugador): Result<Jugador, JugadorErrors.InvalidoError> {
+        logger.debug { "VALIDATOR: Validando jugador: $entity" }
         val idResult = validateID(entity)
         if (idResult.isErr) return idResult
 
@@ -37,6 +41,8 @@ class JugadorValidatorImpl : JugadorValidator {
      * @return El propio jugador si los datos son correctos, un [JugadorErrors.InvalidoError] en caso contrario.
      */
     private fun validateID(entity: Jugador): Result<Jugador, JugadorErrors.InvalidoError> {
+        logger.debug { "VALIDATOR: Validando ID" }
+
         return if (entity.id < 1) {
             Err(JugadorErrors.InvalidoError("El id del jugador no puede ser menor a 1"))
         } else {
@@ -49,6 +55,8 @@ class JugadorValidatorImpl : JugadorValidator {
      * @return El propio jugador si los datos son correctos, un [JugadorErrors.InvalidoError] en caso contrario.
      */
     private fun validateName(entity: Jugador): Result<Jugador, JugadorErrors.InvalidoError> {
+        logger.debug { "VALIDATOR: Validando nombre" }
+
         return if (entity.nombre.isEmpty()) {
             Err(JugadorErrors.InvalidoError("El nombre del jugador no puede estar vacío"))
         } else {
@@ -61,6 +69,8 @@ class JugadorValidatorImpl : JugadorValidator {
      * @return El propio jugador si los datos son correctos, un [JugadorErrors.InvalidoError] en caso contrario.
      */
     private fun validateDorsal(entity: Jugador): Result<Jugador, JugadorErrors.InvalidoError> {
+        logger.debug { "VALIDATOR: Validando dorsal" }
+
         return if (entity.dorsal !in 1..99) {
             Err(JugadorErrors.InvalidoError("El dorsal del jugador debe estar comprendido entre 1 y 99"))
         } else {
@@ -73,6 +83,8 @@ class JugadorValidatorImpl : JugadorValidator {
      * @return El propio jugador si los datos son correctos, un [JugadorErrors.InvalidoError] en caso contrario.
      */
     private fun validateClub(entity: Jugador): Result<Jugador, JugadorErrors.InvalidoError> {
+        logger.debug { "VALIDATOR: Validando club" }
+
         return if (entity.club.isEmpty()) {
             Err(JugadorErrors.InvalidoError("El club del jugador no puede estar vacío"))
         } else {
